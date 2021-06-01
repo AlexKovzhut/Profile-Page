@@ -35,6 +35,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="s6d-YN-f2K"/>
+                    <connections>
+                        <outlet property="returnButton" destination="rxB-wD-UP8" id="vNQ-l0-qr8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +100,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="nRG-HU-Em4">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="atK-OQ-hMP" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="atK-OQ-hMP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VNT-yz-4Gu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ebG-MP-XsA">
