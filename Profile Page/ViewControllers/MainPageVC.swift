@@ -1,19 +1,36 @@
 //
-//  WelcomePageController.swift
+//  MainPageVC.swift
 //  Profile Page
 //
-//  Created by Alexander Kovzhut on 30.05.2021.
+//  Created by Alexander Kovzhut on 27.09.2021.
 //
 
 import UIKit
 
-class WelcomePageController: UIViewController {
-
+class MainPageVC: UIViewController {
+    @IBOutlet weak var textLabel: UILabel!
+    
+    var user = ""
+    
+    private let primaryColor = UIColor(
+        red: 210/255,
+        green: 109/255,
+        blue: 128/255,
+        alpha: 1
+    )
+    private let secondaryColor = UIColor(
+        red: 107/255,
+        green: 148/255,
+        blue: 230/255,
+        alpha: 1
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        welcomeLabel.text = "Welcome, \(user)!"    }
+        textLabel.text = "Welcome, \(user)!"
+    }
+
 }
 
 // MARK: - Set background color
