@@ -23,7 +23,7 @@ class LoginVC: UIViewController {
         mainPageVC.user = user
     }
     
-    @IBAction func logInPressed(_ sender: UIButton) {
+    @IBAction func logInPressed() {
         if loginTextField.text != user || passwordTextField.text != password {
             showAlert(
                 title: "Invalid login or password",
