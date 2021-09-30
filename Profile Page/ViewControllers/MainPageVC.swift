@@ -11,11 +11,11 @@ class MainPageVC: UIViewController {
     
     @IBOutlet weak var textLabel: UILabel!
     
-    var user = ""
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textLabel.text = "Welcome, \(user)!"
+        textLabel.text = "Welcome, \(user.person.fullName)!"
     }
 
 }
