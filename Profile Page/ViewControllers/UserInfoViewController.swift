@@ -66,6 +66,8 @@ class UserInfoViewController: UIViewController {
         setConstraints()
     }
     
+    //MARK: -
+    
     private func setupView() {
         title = "Active User"
         view.backgroundColor = .white
@@ -75,6 +77,8 @@ class UserInfoViewController: UIViewController {
         view.addSubview(stackView)
     }
 }
+
+//MARK: -
 
 extension UserInfoViewController {
     private func setConstraints() {

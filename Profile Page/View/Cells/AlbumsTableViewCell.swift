@@ -64,6 +64,8 @@ class AlbumsTableViewCell: UITableViewCell {
         fatalError("Error")
     }
     
+    //MARK: -
+    
     private func setupViews() {
         self.backgroundColor = .clear
         self.selectionStyle = .none
@@ -75,6 +77,8 @@ class AlbumsTableViewCell: UITableViewCell {
         
         self.addSubview(stackView)
     }
+    
+    //MARK: -
     
     private func setConstraints() {
         NSLayoutConstraint.activate([

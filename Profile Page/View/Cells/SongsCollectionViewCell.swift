@@ -26,6 +26,8 @@ class SongsCollectionViewCell: UICollectionViewCell {
         fatalError("Error")
     }
     
+    //MARK: -
+    
     func setConstraints() {
         self.addSubview(nameSongLabel)
         NSLayoutConstraint.activate([

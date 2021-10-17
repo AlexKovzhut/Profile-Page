@@ -18,6 +18,7 @@
 		E086F1E1271AF7F40047CA7B /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E086F1E0271AF7F40047CA7B /* AlbumsTableViewCell.swift */; };
 		E086F1E5271AF9020047CA7B /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E086F1E4271AF9020047CA7B /* DetailAlbumViewController.swift */; };
 		E086F1E8271B20340047CA7B /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E086F1E7271B20340047CA7B /* SongsCollectionViewCell.swift */; };
+		E086F1EB271CAB8B0047CA7B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E086F1EA271CAB8B0047CA7B /* String.swift */; };
 		E0ADA63826637152009375F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0ADA63726637152009375F9 /* Assets.xcassets */; };
 		E0ADA63B26637152009375F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0ADA63926637152009375F9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		E086F1E0271AF7F40047CA7B /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		E086F1E4271AF9020047CA7B /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
 		E086F1E7271B20340047CA7B /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E086F1EA271CAB8B0047CA7B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E0ADA62B26637150009375F9 /* Profile Page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Profile Page.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0ADA63726637152009375F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0ADA63A26637152009375F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				E086F1CF271AD7150047CA7B /* UIStackView.swift */,
 				E086F1D9271AF4E30047CA7B /* UIViewController.swift */,
+				E086F1EA271CAB8B0047CA7B /* String.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				E086F1C7271AD4900047CA7B /* AuthViewController.swift in Sources */,
 				E058685E2704EF8E0052F4F2 /* AppDelegate.swift in Sources */,
 				E086F1E5271AF9020047CA7B /* DetailAlbumViewController.swift in Sources */,
+				E086F1EB271CAB8B0047CA7B /* String.swift in Sources */,
 				E086F1E1271AF7F40047CA7B /* AlbumsTableViewCell.swift in Sources */,
 				E05868612704EFB60052F4F2 /* SceneDelegate.swift in Sources */,
 				E086F1D0271AD7150047CA7B /* UIStackView.swift in Sources */,

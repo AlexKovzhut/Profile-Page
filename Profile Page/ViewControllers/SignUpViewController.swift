@@ -101,9 +101,30 @@ class SignUpViewController: UIViewController {
         setupDatePicker()
         setupDelegate()
         setConstraints()
+        registerKeyboardNotification()
     }
     
-    //MARK: -
+    deinit {
+        removeKeyboardNotification()
+    }
+    
+//MARK: -
+    
+    private func setTextField(textField: UITextField, label: UILabel, validMessage: String, wrongMessage: String, string: String, range: NSRange) {
+        let text = (textField.text ?? "") + string
+        let result: String
+        
+        if range.length == 1 {
+            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+            result = String(text[text.startIndex..<end])
+        } else {
+            result = text
+        }
+        
+        textField.text = result
+    }
+    
+//MARK: -
     private func setupViews() {
         title = "Sign Up"
         
@@ -137,8 +158,20 @@ class SignUpViewController: UIViewController {
 }
 
 //MARK: -
-extension SignUpViewController:UITextFieldDelegate {
+extension SignUpViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = (firstNameTextField.text ?? "") + string
+        let result: String
+        
+        if range.length == 1 {
+            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+            result = String(text[text.startIndex..<end])
+        } else {
+            result = text
+        }
+        
+        firstNameTextField.text = result
+        
         return false
     }
     
@@ -148,6 +181,31 @@ extension SignUpViewController:UITextFieldDelegate {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
+    }
+}
+
+//MARK: -
+extension SignUpViewController {
+    private func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHeight.height / 2)
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        scrollView.contentOffset = CGPoint.zero
     }
 }
 

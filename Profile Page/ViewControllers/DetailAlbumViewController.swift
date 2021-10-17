@@ -72,6 +72,8 @@ class DetailAlbumViewController: UIViewController {
         setConstraints()
     }
     
+    //MARK: -
+    
     private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(albumLogo)
@@ -87,6 +89,8 @@ class DetailAlbumViewController: UIViewController {
         collectionView.dataSource = self
     }
 }
+
+//MARK: -
 
 extension DetailAlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -104,6 +108,8 @@ extension DetailAlbumViewController: UICollectionViewDelegate, UICollectionViewD
         CGSize(width: collectionView.frame.width, height: 20)
     }
 }
+
+//MARK: -
 
 extension DetailAlbumViewController {
     private func setConstraints() {
