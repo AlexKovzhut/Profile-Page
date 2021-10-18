@@ -90,6 +90,8 @@ class SignUpViewController: UIViewController {
     private var fieldsStackView = UIStackView()
     private let datePicker = UIDatePicker()
     
+    let nameValidType: String.ValidTypes = .name
+    
     @objc func signUpButtonTapped() {
         
     }
@@ -110,7 +112,7 @@ class SignUpViewController: UIViewController {
     
 //MARK: -
     
-    private func setTextField(textField: UITextField, label: UILabel, validMessage: String, wrongMessage: String, string: String, range: NSRange) {
+    private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessage: String, wrongMessage: String, string: String, range: NSRange) {
         let text = (textField.text ?? "") + string
         let result: String
         
@@ -122,6 +124,12 @@ class SignUpViewController: UIViewController {
         }
         
         textField.text = result
+        
+        if result.isValid(validType: validType) {
+            print("+")
+        } else {
+            print("-")
+        }
     }
     
 //MARK: -
@@ -160,19 +168,13 @@ class SignUpViewController: UIViewController {
 //MARK: -
 extension SignUpViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text = (firstNameTextField.text ?? "") + string
-        let result: String
-        
-        if range.length == 1 {
-            let end = text.index(text.startIndex, offsetBy: text.count - 1)
-            result = String(text[text.startIndex..<end])
-        } else {
-            result = text
+       
+        switch textField {
+        case firstNameTextField:
+            setTextField(textField: firstNameTextField, label: , validType: <#T##String.ValidTypes#>, validMessage: <#T##String#>, wrongMessage: <#T##String#>, string: <#T##String#>, range: range)
+        default:
+            break
         }
-        
-        firstNameTextField.text = result
-        
-        return false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
