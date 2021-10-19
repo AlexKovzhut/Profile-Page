@@ -40,12 +40,30 @@ class SignUpViewController: UIViewController {
         return textField
     }()
     
+    private let firstNameValidLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "Required field"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
     private let lastNameTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Last Name"
         
         return textField
+    }()
+    
+    private let lastNameValidLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "Required field"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
     }()
     
     private let phoneNumberTextField: UITextField = {
@@ -57,12 +75,30 @@ class SignUpViewController: UIViewController {
         return textField
     }()
     
+    private let phoneNumberValidLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "Required field"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
     private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "E-Mail"
         
         return textField
+    }()
+    
+    private let emailValidLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "Required field"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
     }()
     
     private let passwordTextField: UITextField = {
@@ -72,6 +108,15 @@ class SignUpViewController: UIViewController {
         textField.placeholder = "Password"
         
         return textField
+    }()
+    
+    private let passwordValidLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "Required field"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
     }()
     
     
@@ -171,10 +216,12 @@ extension SignUpViewController: UITextFieldDelegate {
        
         switch textField {
         case firstNameTextField:
-            setTextField(textField: firstNameTextField, label: , validType: <#T##String.ValidTypes#>, validMessage: <#T##String#>, wrongMessage: <#T##String#>, string: <#T##String#>, range: range)
+            setTextField(textField: firstNameTextField, label: firstNameValidLabel, validType: nameValidType, validMessage: "", wrongMessage: "", string: string, range: range)
         default:
             break
         }
+        
+        return false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
