@@ -66,6 +66,15 @@ class SignUpViewController: UIViewController {
         return label
     }()
     
+    private let ageValidLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "Required field"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
     private let phoneNumberTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -184,7 +193,7 @@ class SignUpViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(backgroundView)
         
-        fieldsStackView = UIStackView(arrangedSubviews: [firstNameTextField, lastNameTextField, datePicker, phoneNumberTextField, emailTextField, passwordTextField], axis: .vertical, spacing: 10, distibution: .fillProportionally)
+        fieldsStackView = UIStackView(arrangedSubviews: [firstNameTextField, firstNameValidLabel, lastNameTextField, lastNameValidLabel, datePicker, ageValidLabel, phoneNumberTextField, phoneNumberValidLabel, emailTextField, emailValidLabel, passwordTextField, passwordValidLabel], axis: .vertical, spacing: 10, distibution: .fillProportionally)
         
         backgroundView.addSubview(fieldsStackView)
         backgroundView.addSubview(loginLabel)
