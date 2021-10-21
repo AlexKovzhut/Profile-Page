@@ -145,6 +145,7 @@ class SignUpViewController: UIViewController {
     private let datePicker = UIDatePicker()
     
     let nameValidType: String.ValidTypes = .name
+    let emailValidType: String.ValidTypes = .email
     
     @objc func signUpButtonTapped() {
         
@@ -167,6 +168,12 @@ class SignUpViewController: UIViewController {
 //MARK: -
     
     private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessage: String, wrongMessage: String, string: String, range: NSRange) {
+        if string.isValid(validType: nameValidType) {
+            print("+")
+        } else {
+            print("-")
+        }
+        
         let text = (textField.text ?? "") + string
         let result: String
         
@@ -180,9 +187,11 @@ class SignUpViewController: UIViewController {
         textField.text = result
         
         if result.isValid(validType: validType) {
-            print("+")
+            label.text = validMessage
+            label.textColor = .green
         } else {
-            print("-")
+            label.text = wrongMessage
+            label.textColor = .red
         }
     }
     
@@ -225,7 +234,13 @@ extension SignUpViewController: UITextFieldDelegate {
        
         switch textField {
         case firstNameTextField:
-            setTextField(textField: firstNameTextField, label: firstNameValidLabel, validType: nameValidType, validMessage: "", wrongMessage: "", string: string, range: range)
+            setTextField(textField: firstNameTextField, label: firstNameValidLabel, validType: nameValidType, validMessage: "Name is valid", wrongMessage: "Only A-Z characters, min 1 character", string: string, range: range)
+        case lastNameTextField:
+            setTextField(textField: lastNameTextField, label: lastNameValidLabel, validType: nameValidType, validMessage: "Name is valid", wrongMessage: "Only A-Z characters, min 1 character", string: string, range: range)
+        case emailTextField:
+            setTextField(textField: emailTextField, label: emailValidLabel, validType: emailValidType, validMessage: "Name is valid", wrongMessage: "Only A-Z characters, min 1 character", string: string, range: range)
+        case passwordTextField:
+            setTextField(textField: passwordTextField, label: passwordValidLabel, validType: passwordValidType, validMessage: "Name is valid", wrongMessage: "Only A-Z characters, min 1 character", string: string, range: range)
         default:
             break
         }
