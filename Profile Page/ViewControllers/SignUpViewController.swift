@@ -146,6 +146,7 @@ class SignUpViewController: UIViewController {
     
     let nameValidType: String.ValidTypes = .name
     let emailValidType: String.ValidTypes = .email
+    let passwordValidType: String.ValidTypes = .password
     
     @objc func signUpButtonTapped() {
         
@@ -238,9 +239,9 @@ extension SignUpViewController: UITextFieldDelegate {
         case lastNameTextField:
             setTextField(textField: lastNameTextField, label: lastNameValidLabel, validType: nameValidType, validMessage: "Name is valid", wrongMessage: "Only A-Z characters, min 1 character", string: string, range: range)
         case emailTextField:
-            setTextField(textField: emailTextField, label: emailValidLabel, validType: emailValidType, validMessage: "Name is valid", wrongMessage: "Only A-Z characters, min 1 character", string: string, range: range)
+            setTextField(textField: emailTextField, label: emailValidLabel, validType: emailValidType, validMessage: "Email is valid", wrongMessage: "Email is not valid", string: string, range: range)
         case passwordTextField:
-            setTextField(textField: passwordTextField, label: passwordValidLabel, validType: passwordValidType, validMessage: "Name is valid", wrongMessage: "Only A-Z characters, min 1 character", string: string, range: range)
+            setTextField(textField: passwordTextField, label: passwordValidLabel, validType: passwordValidType, validMessage: "Password is valid", wrongMessage: "Password is not valid", string: string, range: range)
         default:
             break
         }
