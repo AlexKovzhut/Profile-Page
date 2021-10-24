@@ -1,3 +1,3 @@
 ## Profile-Page
 
-### *Test app with API*
+### *Test app*
